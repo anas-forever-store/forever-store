@@ -67,8 +67,9 @@
         .product-image {
             width: 100%;
             height: 200px;
-            object-fit: cover;
+            object-fit: contain;
             background: #f0f0f0;
+            padding: 10px;
         }
         
         .product-info {
@@ -205,48 +206,48 @@
 
     <script>
         const products = [
-            { id: 1, name: 'جل الصبار النقي', price: 120, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 2, name: 'معجون الأسنان', price: 60, image: 'https://m.media-amazon.com/images/I/71-xCRvFfaL._AC_SX679_.jpg' },
-            { id: 3, name: 'عسل النحل الطبيعي', price: 150, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 4, name: 'حبوب اللقاح', price: 180, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 5, name: 'غذاء ملكات النحل', price: 200, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 6, name: 'بروبوليس النحل', price: 170, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 7, name: 'حقول الخضار', price: 140, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 8, name: 'جارسينيا بلس', price: 175, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 9, name: 'كلين 9', price: 250, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 10, name: 'سونيا منظف الوجه', price: 85, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 11, name: 'سونيا تونر الوجه', price: 95, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 12, name: 'سونيا مرطب الوجه', price: 110, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 13, name: 'سونيا قناع الوجه', price: 100, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 14, name: 'سيروم الوجه', price: 120, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 15, name: 'كريم العينين', price: 130, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 16, name: 'واقي الشمس', price: 100, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 17, name: 'مقشر الوجه', price: 75, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 18, name: 'شامبو الشعر', price: 80, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 19, name: 'بلسم الشعر', price: 85, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 20, name: 'ماسك الشعر', price: 90, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 21, name: 'زيت الشعر', price: 95, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 22, name: 'لوشن الجسم', price: 70, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 23, name: 'زيت الجسم', price: 80, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 24, name: 'مقشر الجسم', price: 65, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 25, name: 'صابون الاستحمام', price: 50, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 26, name: 'حمام الفقاعات', price: 75, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 27, name: 'ملح الاستحمام', price: 60, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 28, name: 'كريم اليدين', price: 55, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 29, name: 'كريم الأقدام', price: 60, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 30, name: 'مزيل الروائح', price: 50, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 31, name: 'بخاخ العطر', price: 120, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 32, name: 'أحمر الشفاه', price: 65, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 33, name: 'أساس الماكياج', price: 85, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 34, name: 'بودرة الوجه', price: 60, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 35, name: 'بلاشر الخدود', price: 55, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 36, name: 'ظلال العيون', price: 70, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 37, name: 'كحل العيون', price: 50, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 38, name: 'ماسكارا الرموش', price: 65, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 39, name: 'هايلايتر الوجه', price: 60, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 40, name: 'برايمر الوجه', price: 75, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 41, name: 'بخاخ تثبيت المكياج', price: 55, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
-            { id: 42, name: 'مجموعة العناية الفاخرة', price: 300, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' }
+            { id: 1, name: 'Vitolize - مكمل الحيوية', price: 180, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
+            { id: 2, name: 'جل الصبار النقي', price: 120, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
+            { id: 3, name: 'معجون الأسنان', price: 60, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
+            { id: 4, name: 'عسل النحل الطبيعي', price: 150, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
+            { id: 5, name: 'حبوب اللقاح', price: 180, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
+            { id: 6, name: 'غذاء ملكات النحل', price: 200, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
+            { id: 7, name: 'بروبوليس النحل', price: 170, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
+            { id: 8, name: 'حقول الخضار', price: 140, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
+            { id: 9, name: 'جارسينيا بلس', price: 175, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
+            { id: 10, name: 'كلين 9', price: 250, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
+            { id: 11, name: 'سونيا منظف الوجه', price: 85, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
+            { id: 12, name: 'سونيا تونر الوجه', price: 95, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
+            { id: 13, name: 'سونيا مرطب الوجه', price: 110, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
+            { id: 14, name: 'سونيا قناع الوجه', price: 100, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
+            { id: 15, name: 'سيروم الوجه', price: 120, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
+            { id: 16, name: 'كريم العينين', price: 130, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
+            { id: 17, name: 'واقي الشمس', price: 100, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
+            { id: 18, name: 'مقشر الوجه', price: 75, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
+            { id: 19, name: 'شامبو الشعر', price: 80, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
+            { id: 20, name: 'بلسم الشعر', price: 85, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
+            { id: 21, name: 'ماسك الشعر', price: 90, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
+            { id: 22, name: 'زيت الشعر', price: 95, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
+            { id: 23, name: 'لوشن الجسم', price: 70, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
+            { id: 24, name: 'زيت الجسم', price: 80, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
+            { id: 25, name: 'مقشر الجسم', price: 65, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
+            { id: 26, name: 'صابون الاستحمام', price: 50, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
+            { id: 27, name: 'حمام الفقاعات', price: 75, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
+            { id: 28, name: 'ملح الاستحمام', price: 60, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
+            { id: 29, name: 'كريم اليدين', price: 55, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
+            { id: 30, name: 'كريم الأقدام', price: 60, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
+            { id: 31, name: 'مزيل الروائح', price: 50, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
+            { id: 32, name: 'بخاخ العطر', price: 120, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
+            { id: 33, name: 'أحمر الشفاه', price: 65, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
+            { id: 34, name: 'أساس الماكياج', price: 85, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
+            { id: 35, name: 'بودرة الوجه', price: 60, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
+            { id: 36, name: 'بلاشر الخدود', price: 55, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
+            { id: 37, name: 'ظلال العيون', price: 70, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
+            { id: 38, name: 'كحل العيون', price: 50, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
+            { id: 39, name: 'ماسكارا الرموش', price: 65, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
+            { id: 40, name: 'هايلايتر الوجه', price: 60, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
+            { id: 41, name: 'برايمر الوجه', price: 75, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
+            { id: 42, name: 'مجموعة العناية الفاخرة', price: 300, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' }
         ];
         
         let cart = [];
