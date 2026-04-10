@@ -3,226 +3,340 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر Forever</title>
+    <title>متجر Forever الفاخر - 42 منتج</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; background: #f5f5f5; }
-        .header { background: linear-gradient(135deg, #2c3e50, #34495e); color: #f39c12; padding: 20px; text-align: center; }
-        .header h1 { font-size: 32px; margin-bottom: 10px; }
-        .nav { display: flex; justify-content: center; gap: 20px; margin: 20px 0; flex-wrap: wrap; }
-        .nav button { padding: 10px 20px; background: #f39c12; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
-        .nav button:hover { background: #e67e22; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
-        .card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        .card-img { width: 100%; height: 150px; background: #ecf0f1; display: flex; align-items: center; justify-content: center; font-size: 40px; }
-        .card-body { padding: 15px; }
-        .card-title { font-weight: bold; color: #2c3e50; margin-bottom: 8px; }
-        .card-price { color: #f39c12; font-size: 18px; font-weight: bold; margin-bottom: 10px; }
-        .btn-group { display: flex; gap: 8px; }
-        .btn { flex: 1; padding: 8px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
-        .btn-info { background: #3498db; color: white; }
-        .btn-add { background: #f39c12; color: white; }
-        .btn:hover { opacity: 0.9; }
-        .section { display: none; }
-        .section.active { display: block; }
-        .cart-item { background: white; padding: 15px; margin: 10px 0; border-radius: 5px; display: flex; justify-content: space-between; align-items: center; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
-        .form-group input { width: 100%; padding: 10px; border: 1px solid #bdc3c7; border-radius: 4px; }
-        .total { font-size: 20px; font-weight: bold; color: #f39c12; margin: 20px 0; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 40px;
+            padding: 30px 0;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #ffd700;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            color: #bbb;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(255,215,0,0.3);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #f0f0f0;
+        }
+        
+        .product-info {
+            padding: 15px;
+        }
+        
+        .product-name {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+        }
+        
+        .product-price {
+            font-size: 1.3em;
+            color: #ffd700;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .product-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        
+        .btn-add {
+            background: #ffd700;
+            color: #1a1a2e;
+        }
+        
+        .btn-add:hover {
+            background: #ffed4e;
+        }
+        
+        .btn-info {
+            background: #0066cc;
+            color: white;
+        }
+        
+        .btn-info:hover {
+            background: #0052a3;
+        }
+        
+        .cart-section {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .cart-section h2 {
+            color: #1a1a2e;
+            margin-bottom: 15px;
+        }
+        
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cart-total {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #ffd700;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid #ffd700;
+        }
+        
+        .whatsapp-btn {
+            background: #25d366;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            width: 100%;
+            transition: 0.3s;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #1fa952;
+        }
+        
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>🌟 متجر Forever الفاخر 🌟</h1>
-        <p>أفضل منتجات العناية والصحة</p>
-    </div>
-
-    <div class="nav">
-        <button onclick="showSection('products')">المتجر</button>
-        <button onclick="showSection('cart')">السلة (0)</button>
-        <button onclick="showSection('contact')">تواصل معنا</button>
-    </div>
-
     <div class="container">
-        <div id="products" class="section active">
-            <div class="grid" id="productsGrid"></div>
+        <div class="header">
+            <h1>✨ متجر Forever الفاخر ✨</h1>
+            <p>42 منتج متميز للعناية والجمال</p>
         </div>
-
-        <div id="cart" class="section">
-            <h2>سلة التسوق</h2>
+        
+        <div class="products-grid" id="productsGrid"></div>
+        
+        <div class="cart-section">
+            <h2>🛒 سلة التسوق</h2>
             <div id="cartItems"></div>
-            <div class="total">الإجمالي: <span id="total">0</span> ر.س</div>
-            <form id="checkoutForm" style="display:none;">
-                <div class="form-group">
-                    <label>الاسم</label>
-                    <input type="text" id="name" required>
-                </div>
-                <div class="form-group">
-                    <label>الهاتف</label>
-                    <input type="tel" id="phone" required>
-                </div>
-                <div class="form-group">
-                    <label>WhatsApp</label>
-                    <input type="tel" id="whatsapp" required>
-                </div>
-                <div class="form-group">
-                    <label>العنوان</label>
-                    <input type="text" id="address" required>
-                </div>
-                <button type="button" onclick="checkout()" class="btn btn-add" style="width:100%; padding:12px;">إتمام الشراء</button>
-            </form>
-            <div id="emptyMsg" style="text-align:center; padding:40px;">السلة فارغة</div>
-        </div>
-
-        <div id="contact" class="section">
-            <h2>تواصل معنا</h2>
-            <p>البريد: info@forever.com</p>
-            <p>الهاتف: +966 50 000 0000</p>
-            <p>Telegram: @f_health_sa</p>
+            <div class="cart-total">
+                الإجمالي: <span id="cartTotal">0</span> ريس
+            </div>
+            <button class="whatsapp-btn" onclick="sendToWhatsApp()">
+                📱 إرسال الطلب عبر WhatsApp
+            </button>
         </div>
     </div>
 
     <script>
         const products = [
-            {id: 1, name: "جل الصبار", price: 120, emoji: "🌿"},
-            {id: 2, name: "مرطب الشفاه", price: 45, emoji: "💄"},
-            {id: 3, name: "حبوب اللقاح", price: 180, emoji: "🐝"},
-            {id: 4, name: "معجون الأسنان", price: 60, emoji: "😁"},
-            {id: 5, name: "غذاء ملكات النحل", price: 200, emoji: "👑"},
-            {id: 6, name: "رذاذ الصبار", price: 85, emoji: "💨"},
-            {id: 7, name: "كريم البروبوليس", price: 150, emoji: "🧴"},
-            {id: 8, name: "هلام الصبار", price: 95, emoji: "🌱"},
-            {id: 9, name: "لوشن الترطيب", price: 110, emoji: "🧴"},
-            {id: 10, name: "لوشن التدفئة", price: 130, emoji: "🔥"},
-            {id: 11, name: "الثوم والزعتر", price: 140, emoji: "🧄"},
-            {id: 12, name: "مزيل العرق", price: 50, emoji: "🚫"},
-            {id: 13, name: "عامل R3", price: 160, emoji: "💊"},
-            {id: 14, name: "جارسينيا بلس", price: 175, emoji: "⚖️"},
-            {id: 15, name: "عامل ألفا إي", price: 155, emoji: "💪"},
-            {id: 16, name: "معزز المناعة", price: 190, emoji: "🛡️"},
-            {id: 17, name: "منشط الصبار", price: 100, emoji: "⚡"},
-            {id: 18, name: "البحر المتجمد", price: 165, emoji: "🌊"},
-            {id: 19, name: "بروبوليس النحل", price: 185, emoji: "🍯"},
-            {id: 20, name: "الكالسيوم", price: 145, emoji: "🦴"},
-            {id: 21, name: "كلين 9", price: 250, emoji: "🧹"},
-            {id: 22, name: "إشنسيا", price: 135, emoji: "🌸"},
-            {id: 23, name: "حقل الخضار", price: 170, emoji: "🥬"},
-            {id: 24, name: "فوريفر فيت", price: 180, emoji: "🏃"},
-            {id: 25, name: "الجنسنج", price: 155, emoji: "🌿"},
-            {id: 26, name: "جلوكوسامين", price: 165, emoji: "🦵"},
-            {id: 27, name: "لوشن التدفئة بلس", price: 140, emoji: "🔥"},
-            {id: 28, name: "الحديد", price: 125, emoji: "⚙️"},
-            {id: 29, name: "حركة المفاصل", price: 175, emoji: "🧘"},
-            {id: 30, name: "لايسيوم بلس", price: 160, emoji: "👁️"},
-            {id: 31, name: "ماكا متعددة", price: 180, emoji: "💥"},
-            {id: 32, name: "صبار غذائي", price: 130, emoji: "🍃"},
-            {id: 33, name: "قوة بوميستين", price: 185, emoji: "❤️"},
-            {id: 34, name: "شيك سليك", price: 195, emoji: "🥤"},
-            {id: 35, name: "قناع سونيا", price: 120, emoji: "😷"},
-            {id: 36, name: "مرطب سونيا", price: 140, emoji: "🧴"},
-            {id: 37, name: "سيرم سونيا", price: 150, emoji: "💧"},
-            {id: 38, name: "تونر سونيا", price: 100, emoji: "🌊"},
-            {id: 39, name: "واقي الشمس", price: 95, emoji: "☀️"},
-            {id: 40, name: "فايتال 5", price: 170, emoji: "🎯"},
-            {id: 41, name: "عشبة القمح", price: 155, emoji: "🌾"},
-            {id: 42, name: "حزمة النساء", price: 220, emoji: "👩"}
+            { id: 1, name: 'حبوب اللقاح الملكية', price: 180, image: 'https://images.unsplash.com/photo-1585707572537-b6f3f00865b7?w=300&h=200&fit=crop' },
+            { id: 2, name: 'محجون الأسنان', price: 60, image: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde0f?w=300&h=200&fit=crop' },
+            { id: 3, name: 'كريم الوجه الذهبي', price: 150, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 4, name: 'سيروم العناية', price: 120, image: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=300&h=200&fit=crop' },
+            { id: 5, name: 'ماسك الوجه الطبيعي', price: 90, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 6, name: 'زيت الشعر المغذي', price: 110, image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=300&h=200&fit=crop' },
+            { id: 7, name: 'غسول الوجه اللطيف', price: 75, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 8, name: 'كريم اليدين المرطب', price: 65, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 9, name: 'بخاخ العطر الفاخر', price: 200, image: 'https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=300&h=200&fit=crop' },
+            { id: 10, name: 'شامبو الشعر الطبيعي', price: 85, image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=300&h=200&fit=crop' },
+            { id: 11, name: 'بلسم الشعر المرطب', price: 80, image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=300&h=200&fit=crop' },
+            { id: 12, name: 'ماسك الشعر العميق', price: 95, image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=300&h=200&fit=crop' },
+            { id: 13, name: 'كريم العينين المتقدم', price: 140, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 14, name: 'مقشر الوجه الناعم', price: 70, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 15, name: 'تونر الوجه المتوازن', price: 85, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 16, name: 'كريم الليل المغذي', price: 130, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 17, name: 'واقي الشمس الفاخر', price: 100, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 18, name: 'حمام زيت الشعر', price: 105, image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=300&h=200&fit=crop' },
+            { id: 19, name: 'كريم تفتيح البشرة', price: 160, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 20, name: 'سيروم فيتامين سي', price: 135, image: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=300&h=200&fit=crop' },
+            { id: 21, name: 'جل الصبار المهدئ', price: 60, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 22, name: 'كريم الرقبة المشدد', price: 125, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 23, name: 'بخاخ تثبيت المكياج', price: 55, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 24, name: 'أساس الماكياج السائل', price: 95, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 25, name: 'كحل العيون الفاخر', price: 50, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 26, name: 'أحمر الشفاه الحريري', price: 65, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 27, name: 'ظلال العيون المتدرجة', price: 75, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 28, name: 'ماسكارا الرموش الكثيفة', price: 70, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 29, name: 'بودرة الوجه الناعمة', price: 60, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 30, name: 'بلاشر الخدود الوردي', price: 55, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 31, name: 'هايلايتر الوجه المتألق', price: 65, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 32, name: 'برايمر الوجه الناعم', price: 80, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 33, name: 'زيت الجسم المعطر', price: 90, image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=300&h=200&fit=crop' },
+            { id: 34, name: 'لوشن الجسم المرطب', price: 75, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 35, name: 'مقشر الجسم الناعم', price: 70, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 36, name: 'صابون الاستحمام الطبيعي', price: 50, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 37, name: 'كريم الأقدام المرطب', price: 65, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 38, name: 'مزيل الروائح الطبيعي', price: 55, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 39, name: 'حمام الفقاعات الفاخر', price: 85, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 40, name: 'ملح الاستحمام المعطر', price: 60, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 41, name: 'شموع الاستحمام العطرية', price: 75, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' },
+            { id: 42, name: 'مجموعة العناية الفاخرة', price: 250, image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=200&fit=crop' }
         ];
-
+        
         let cart = [];
-
-        function displayProducts() {
+        
+        function renderProducts() {
             const grid = document.getElementById('productsGrid');
-            grid.innerHTML = '';
-            products.forEach(p => {
-                grid.innerHTML += `
-                    <div class="card">
-                        <div class="card-img">${p.emoji}</div>
-                        <div class="card-body">
-                            <div class="card-title">${p.name}</div>
-                            <div class="card-price">${p.price} ر.س</div>
-                            <div class="btn-group">
-                                <button class="btn btn-info" onclick="alert('${p.name}\\nالسعر: ${p.price} ر.س')">معلومات</button>
-                                <button class="btn btn-add" onclick="addCart(${p.id}, '${p.name}', ${p.price})">أضف</button>
-                            </div>
+            grid.innerHTML = products.map(product => `
+                <div class="product-card">
+                    <img src="${product.image}" alt="${product.name}" class="product-image" onerror="this.src='https://via.placeholder.com/300x200?text=${encodeURIComponent(product.name)}'">
+                    <div class="product-info">
+                        <div class="product-name">${product.name}</div>
+                        <div class="product-price">${product.price} ريس</div>
+                        <div class="product-buttons">
+                            <button class="btn btn-add" onclick="addToCart(${product.id})">أضف</button>
+                            <button class="btn btn-info" onclick="showInfo(${product.id})">معلومات</button>
                         </div>
                     </div>
-                `;
-            });
+                </div>
+            `).join('');
         }
-
-        function addCart(id, name, price) {
-            cart.push({id, name, price});
-            updateCart();
-            alert('تم إضافة ' + name + ' للسلة');
-        }
-
-        function updateCart() {
-            const cartDiv = document.getElementById('cartItems');
-            const total = cart.reduce((s, i) => s + i.price, 0);
-            document.getElementById('total').textContent = total;
-            document.querySelector('.nav button:nth-child(2)').textContent = 'السلة (' + cart.length + ')';
-
-            if (cart.length === 0) {
-                cartDiv.innerHTML = '';
-                document.getElementById('emptyMsg').style.display = 'block';
-                document.getElementById('checkoutForm').style.display = 'none';
+        
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity++;
             } else {
-                document.getElementById('emptyMsg').style.display = 'none';
-                document.getElementById('checkoutForm').style.display = 'block';
-                cartDiv.innerHTML = cart.map((item, idx) => `
-                    <div class="cart-item">
-                        <span>${item.name}</span>
-                        <span>${item.price} ر.س</span>
-                        <button class="btn btn-info" onclick="removeCart(${idx})" style="width:60px;">حذف</button>
-                    </div>
-                `).join('');
+                cart.push({ ...product, quantity: 1 });
             }
-        }
-
-        function removeCart(idx) {
-            cart.splice(idx, 1);
+            
             updateCart();
         }
-
-        function checkout() {
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const whatsapp = document.getElementById('whatsapp').value;
-            const address = document.getElementById('address').value;
-
-            if (!name || !phone || !whatsapp || !address) {
-                alert('يرجى ملء جميع الحقول');
+        
+        function updateCart() {
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p style="color: #999; text-align: center;">السلة فارغة</p>';
+                cartTotal.textContent = '0';
                 return;
             }
-
-            let msg = 'طلب شراء من متجر Forever\n\n';
-            msg += 'الاسم: ' + name + '\n';
-            msg += 'الهاتف: ' + phone + '\n';
-            msg += 'العنوان: ' + address + '\n\n';
-            msg += 'المنتجات:\n';
+            
             let total = 0;
-            cart.forEach(item => {
-                msg += '- ' + item.name + ': ' + item.price + ' ر.س\n';
-                total += item.price;
-            });
-            msg += '\nالإجمالي: ' + total + ' ر.س';
-
-            const url = 'https://wa.me/966' + whatsapp.replace(/^0/, '') + '?text=' + encodeURIComponent(msg);
-            window.open(url);
-            cart = [];
+            cartItems.innerHTML = cart.map(item => {
+                total += item.price * item.quantity;
+                return `
+                    <div class="cart-item">
+                        <span>${item.name} × ${item.quantity}</span>
+                        <span>${item.price * item.quantity} ريس</span>
+                        <button class="btn" style="width: 60px; background: #ff6b6b; color: white;" onclick="removeFromCart(${item.id})">حذف</button>
+                    </div>
+                `;
+            }).join('');
+            
+            cartTotal.textContent = total;
+        }
+        
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
             updateCart();
-            alert('تم إرسال الطلب!');
         }
-
-        function showSection(name) {
-            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-            document.getElementById(name).classList.add('active');
+        
+        function sendToWhatsApp() {
+            if (cart.length === 0) {
+                alert('السلة فارغة! أضف منتجات أولاً');
+                return;
+            }
+            
+            let message = 'مرحباً، أود طلب المنتجات التالية من متجر Forever:\n\n';
+            let total = 0;
+            
+            cart.forEach(item => {
+                message += `• ${item.name} × ${item.quantity} = ${item.price * item.quantity} ريس\n`;
+                total += item.price * item.quantity;
+            });
+            
+            message += `\nالإجمالي: ${total} ريس`;
+            
+            const whatsappNumber = '966501234567';
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`);
         }
-
-        displayProducts();
-        updateCart();
+        
+        function showInfo(productId) {
+            const product = products.find(p => p.id === productId);
+            alert(`${product.name}\n\nالسعر: ${product.price} ريس\n\nمنتج من Forever للعناية والجمال`);
+        }
+        
+        renderProducts();
     </script>
 </body>
 </html>
