@@ -66,14 +66,9 @@
         
         .product-image {
             width: 100%;
-            height: 180px;
-            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3em;
-            font-weight: bold;
-            color: #1a1a2e;
+            height: 200px;
+            object-fit: cover;
+            background: #f0f0f0;
         }
         
         .product-info {
@@ -210,48 +205,48 @@
 
     <script>
         const products = [
-            { id: 1, name: 'حبوب اللقاح الملكية', price: 180, emoji: '🐝' },
-            { id: 2, name: 'محجون الأسنان', price: 60, emoji: '😁' },
-            { id: 3, name: 'كريم الوجه الذهبي', price: 150, emoji: '✨' },
-            { id: 4, name: 'سيروم العناية', price: 120, emoji: '💧' },
-            { id: 5, name: 'ماسك الوجه الطبيعي', price: 90, emoji: '🧴' },
-            { id: 6, name: 'زيت الشعر المغذي', price: 110, emoji: '🧴' },
-            { id: 7, name: 'غسول الوجه اللطيف', price: 75, emoji: '🧼' },
-            { id: 8, name: 'كريم اليدين المرطب', price: 65, emoji: '🤲' },
-            { id: 9, name: 'بخاخ العطر الفاخر', price: 200, emoji: '💐' },
-            { id: 10, name: 'شامبو الشعر الطبيعي', price: 85, emoji: '🧴' },
-            { id: 11, name: 'بلسم الشعر المرطب', price: 80, emoji: '🧴' },
-            { id: 12, name: 'ماسك الشعر العميق', price: 95, emoji: '💆' },
-            { id: 13, name: 'كريم العينين المتقدم', price: 140, emoji: '👁️' },
-            { id: 14, name: 'مقشر الوجه الناعم', price: 70, emoji: '✨' },
-            { id: 15, name: 'تونر الوجه المتوازن', price: 85, emoji: '💧' },
-            { id: 16, name: 'كريم الليل المغذي', price: 130, emoji: '🌙' },
-            { id: 17, name: 'واقي الشمس الفاخر', price: 100, emoji: '☀️' },
-            { id: 18, name: 'حمام زيت الشعر', price: 105, emoji: '🧴' },
-            { id: 19, name: 'كريم تفتيح البشرة', price: 160, emoji: '✨' },
-            { id: 20, name: 'سيروم فيتامين سي', price: 135, emoji: '🍊' },
-            { id: 21, name: 'جل الصبار المهدئ', price: 60, emoji: '🌿' },
-            { id: 22, name: 'كريم الرقبة المشدد', price: 125, emoji: '💪' },
-            { id: 23, name: 'بخاخ تثبيت المكياج', price: 55, emoji: '💄' },
-            { id: 24, name: 'أساس الماكياج السائل', price: 95, emoji: '💄' },
-            { id: 25, name: 'كحل العيون الفاخر', price: 50, emoji: '👁️' },
-            { id: 26, name: 'أحمر الشفاه الحريري', price: 65, emoji: '💋' },
-            { id: 27, name: 'ظلال العيون المتدرجة', price: 75, emoji: '👁️' },
-            { id: 28, name: 'ماسكارا الرموش الكثيفة', price: 70, emoji: '👁️' },
-            { id: 29, name: 'بودرة الوجه الناعمة', price: 60, emoji: '✨' },
-            { id: 30, name: 'بلاشر الخدود الوردي', price: 55, emoji: '😊' },
-            { id: 31, name: 'هايلايتر الوجه المتألق', price: 65, emoji: '✨' },
-            { id: 32, name: 'برايمر الوجه الناعم', price: 80, emoji: '✨' },
-            { id: 33, name: 'زيت الجسم المعطر', price: 90, emoji: '🧴' },
-            { id: 34, name: 'لوشن الجسم المرطب', price: 75, emoji: '🧴' },
-            { id: 35, name: 'مقشر الجسم الناعم', price: 70, emoji: '✨' },
-            { id: 36, name: 'صابون الاستحمام الطبيعي', price: 50, emoji: '🧼' },
-            { id: 37, name: 'كريم الأقدام المرطب', price: 65, emoji: '🦶' },
-            { id: 38, name: 'مزيل الروائح الطبيعي', price: 55, emoji: '🌿' },
-            { id: 39, name: 'حمام الفقاعات الفاخر', price: 85, emoji: '🛁' },
-            { id: 40, name: 'ملح الاستحمام المعطر', price: 60, emoji: '🧂' },
-            { id: 41, name: 'شموع الاستحمام العطرية', price: 75, emoji: '🕯️' },
-            { id: 42, name: 'مجموعة العناية الفاخرة', price: 250, emoji: '🎁' }
+            { id: 1, name: 'جل الصبار النقي', price: 120, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 2, name: 'معجون الأسنان', price: 60, image: 'https://m.media-amazon.com/images/I/71-xCRvFfaL._AC_SX679_.jpg' },
+            { id: 3, name: 'عسل النحل الطبيعي', price: 150, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 4, name: 'حبوب اللقاح', price: 180, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 5, name: 'غذاء ملكات النحل', price: 200, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 6, name: 'بروبوليس النحل', price: 170, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 7, name: 'حقول الخضار', price: 140, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 8, name: 'جارسينيا بلس', price: 175, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 9, name: 'كلين 9', price: 250, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 10, name: 'سونيا منظف الوجه', price: 85, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 11, name: 'سونيا تونر الوجه', price: 95, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 12, name: 'سونيا مرطب الوجه', price: 110, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 13, name: 'سونيا قناع الوجه', price: 100, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 14, name: 'سيروم الوجه', price: 120, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 15, name: 'كريم العينين', price: 130, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 16, name: 'واقي الشمس', price: 100, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 17, name: 'مقشر الوجه', price: 75, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 18, name: 'شامبو الشعر', price: 80, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 19, name: 'بلسم الشعر', price: 85, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 20, name: 'ماسك الشعر', price: 90, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 21, name: 'زيت الشعر', price: 95, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 22, name: 'لوشن الجسم', price: 70, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 23, name: 'زيت الجسم', price: 80, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 24, name: 'مقشر الجسم', price: 65, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 25, name: 'صابون الاستحمام', price: 50, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 26, name: 'حمام الفقاعات', price: 75, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 27, name: 'ملح الاستحمام', price: 60, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 28, name: 'كريم اليدين', price: 55, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 29, name: 'كريم الأقدام', price: 60, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 30, name: 'مزيل الروائح', price: 50, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 31, name: 'بخاخ العطر', price: 120, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 32, name: 'أحمر الشفاه', price: 65, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 33, name: 'أساس الماكياج', price: 85, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 34, name: 'بودرة الوجه', price: 60, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 35, name: 'بلاشر الخدود', price: 55, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 36, name: 'ظلال العيون', price: 70, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 37, name: 'كحل العيون', price: 50, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 38, name: 'ماسكارا الرموش', price: 65, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 39, name: 'هايلايتر الوجه', price: 60, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 40, name: 'برايمر الوجه', price: 75, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 41, name: 'بخاخ تثبيت المكياج', price: 55, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' },
+            { id: 42, name: 'مجموعة العناية الفاخرة', price: 300, image: 'https://m.media-amazon.com/images/I/71GyZGJ3CqL._AC_SX679_.jpg' }
         ];
         
         let cart = [];
@@ -260,7 +255,7 @@
             const grid = document.getElementById('productsGrid');
             grid.innerHTML = products.map(product => `
                 <div class="product-card">
-                    <div class="product-image">${product.emoji}</div>
+                    <img src="${product.image}" alt="${product.name}" class="product-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22250%22 height=%22200%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22250%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2216%22 fill=%22%23999%22 text-anchor=%22middle%22 dy=%22.3em%22%3E${product.name}%3C/text%3E%3C/svg%3E'">
                     <div class="product-info">
                         <div class="product-name">${product.name}</div>
                         <div class="product-price">${product.price} ريس</div>
