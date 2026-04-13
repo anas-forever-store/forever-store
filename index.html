@@ -115,15 +115,6 @@
             background: #ffed4e;
         }
         
-        .btn-info {
-            background: #0066cc;
-            color: white;
-        }
-        
-        .btn-info:hover {
-            background: #0052a3;
-        }
-        
         .cart-section {
             background: white;
             padding: 20px;
@@ -206,7 +197,7 @@
 
     <script>
         const products = [
-            { id: 1, name: 'Vitolize - مكمل الحيوية', price: 180, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
+            { id: 1, name: 'Vitolize', price: 180, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
             { id: 2, name: 'جل الصبار النقي', price: 120, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
             { id: 3, name: 'معجون الأسنان', price: 60, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
             { id: 4, name: 'عسل النحل الطبيعي', price: 150, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
@@ -236,18 +227,19 @@
             { id: 28, name: 'ملح الاستحمام', price: 60, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
             { id: 29, name: 'كريم اليدين', price: 55, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
             { id: 30, name: 'كريم الأقدام', price: 60, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
-            { id: 31, name: 'مزيل الروائح', price: 50, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
-            { id: 32, name: 'بخاخ العطر', price: 120, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
-            { id: 33, name: 'أحمر الشفاه', price: 65, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
-            { id: 34, name: 'أساس الماكياج', price: 85, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
-            { id: 35, name: 'بودرة الوجه', price: 60, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
-            { id: 36, name: 'بلاشر الخدود', price: 55, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
-            { id: 37, name: 'ظلال العيون', price: 70, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
-            { id: 38, name: 'كحل العيون', price: 50, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
-            { id: 39, name: 'ماسكارا الرموش', price: 65, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
-            { id: 40, name: 'هايلايتر الوجه', price: 60, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
-            { id: 41, name: 'برايمر الوجه', price: 75, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
-            { id: 42, name: 'مجموعة العناية الفاخرة', price: 300, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' }
+            { id: 31, name: 'ألو أكتيفاتور', price: 140, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
+            { id: 32, name: 'واقي الشمس بالألوفيرا', price: 110, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
+            { id: 33, name: 'الو صابون سائل', price: 65, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
+            { id: 34, name: 'ابدا رحلتك مع فوريفر', price: 300, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
+            { id: 35, name: 'الو شامبو جوجوبا', price: 95, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
+            { id: 36, name: 'الو بلسم جوجوبا', price: 100, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
+            { id: 37, name: 'زيت الشعر المغذي', price: 85, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
+            { id: 38, name: 'عطر نسائي', price: 150, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
+            { id: 39, name: 'عطر رجالي', price: 150, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
+            { id: 40, name: 'الو بدي وش', price: 75, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
+            { id: 41, name: 'الو بدي لوشن', price: 85, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' },
+            { id: 42, name: 'مرطب عميق', price: 120, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/02_aloe_vera_gel_f191d835.png' },
+            { id: 43, name: 'ماسك السليلوز الحيوي', price: 95, image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504229319/biyiD3jxYHdeg8zFZFUD48/01_vitolize_bff25f33.jpg' }
         ];
         
         let cart = [];
@@ -262,7 +254,6 @@
                         <div class="product-price">${product.price} ريس</div>
                         <div class="product-buttons">
                             <button class="btn btn-add" onclick="addToCart(${product.id})">أضف</button>
-                            <button class="btn btn-info" onclick="showInfo(${product.id})">معلومات</button>
                         </div>
                     </div>
                 </div>
@@ -331,11 +322,6 @@
             const whatsappNumber = '966501234567';
             const encodedMessage = encodeURIComponent(message);
             window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`);
-        }
-        
-        function showInfo(productId) {
-            const product = products.find(p => p.id === productId);
-            alert(`${product.name}\n\nالسعر: ${product.price} ريس\n\nمنتج من Forever للعناية والجمال`);
         }
         
         renderProducts();
