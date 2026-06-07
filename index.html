@@ -399,5 +399,28 @@
         // تحميل المنتجات عند فتح الصفحة
         renderProducts();
     </script>
+<!-- نافذة تفاصيل المنتج (بتكون مخفية وبأبعاد مرتبة) -->
+<div id="productModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.7); align-items:center; justify-content:center;">
+  <div style="background:#fff; padding:20px; border-radius:15px; width:90%; max-width:400px; text-align:center; position:relative; direction:rtl; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+    
+    <!-- زر الإغلاق (علامة X) -->
+    <span onclick="document.getElementById('productModal').style.display='none'" style="position:absolute; top:10px; left:15px; font-size:28px; cursor:pointer; color:#aaa;">&times;</span>
+    
+    <!-- محتويات النافذة (بتتعبى تلقائي لما نضغط على المنتج) -->
+    <img id="modalImage" src="" style="width:100%; max-height:220px; object-fit:contain; border-radius:10px; margin-bottom:15px;">
+    <h3 id="modalName" style="margin:10px 0; color:#333; font-size:20px;"></h3>
+    <p id="modalPrice" style="color:#2ecc71; font-weight:bold; font-size:18px; margin-bottom:15px;"></p>
+    
+    <!-- صندوق الفوائد -->
+    <div style="background:#f9f9f9; padding:12px; border-radius:8px; font-size:14px; color:#555; line-height:1.6; text-align:right; margin-bottom:15px; max-height:150px; overflow-y:auto;">
+        <strong style="color:#2c3e50;">فوائد ومميزات المنتج:</strong>
+        <p id="modalDescription" style="margin-top:5px; white-space: pre-line;"></p>
+    </div>
+    
+    <!-- زر الإضافة للسلة من داخل النافذة -->
+    <button id="modalOrderBtn" style="background:#27ae60; color:#fff; border:none; padding:12px; width:100%; border-radius:8px; font-size:16px; font-weight:bold; cursor:pointer;">إضافة إلى السلة 🛒</button>
+  </div>
+</div>
+
 </body>
 </html>
