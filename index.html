@@ -304,13 +304,15 @@
         function renderProducts() {
             const grid = document.getElementById('productsGrid');
             grid.innerHTML = products.map(product => `
-                <div class="product-card">
+                <div class="product-card" onclick="openModal(${product.id})">
+
                     <img src="${product.image}" alt="${product.name}" class="product-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22250%22 height=%22200%22%3E%3Crect fill=%22%23ffffff%22 width=%22250%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2216%22 fill=%22%23999%22 text-anchor=%22middle%22 dy=%22.3em%22%3E${product.name}%3C/text%3E%3C/svg%3E'">
                     <div class="product-info">
                         <div class="product-name">${product.name}</div>
                         <div class="product-price">${product.price} ر.س</div>
-                        <div class="product-buttons">
-                            <button class="btn btn-add" onclick="addToCart(${product.id})">أضف</button>
+                        <button class="btn btn-add" onclick="event.stopPropagation(); addToCart(${product.id})">أضف</button>
+
+                        
                         </div>
                     </div>
                 </div>
@@ -397,6 +399,25 @@
         }
         
         // تحميل المنتجات عند فتح الصفحة
+       function openModal(productId) {
+    const product = products.find(p => p.id === productId);
+    if (product) {
+        document.getElementById('modalImage').src = product.image;
+        document.getElementById('modalName').innerText = product.name;
+        document.getElementById('modalPrice').innerText = product.price + ' ر.س';
+        document.getElementById('modalDescription').innerText = product.description || 'جاري إضافة الفوائد والمميزات لهذا المنتج قريباً...';
+        
+        // ربط زر الشراء داخل النافذة بالسلة
+        document.getElementById('modalOrderBtn').onclick = function() {
+            addToCart(product.id);
+            document.getElementById('productModal').style.display = 'none';
+        };
+        
+        // إظهار النافذة
+        document.getElementById('productModal').style.display = 'flex';
+    }
+}
+
         renderProducts();
     </script>
 <!-- نافذة تفاصيل المنتج (بتكون مخفية وبأبعاد مرتبة) -->
